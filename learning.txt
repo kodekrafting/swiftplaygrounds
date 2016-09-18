@@ -1,0 +1,40 @@
+//: Playground - noun: a place where people can play -- and an especially good place for kodekrafting
+// Note: If you want this to run, just copy the text into your own playground file
+
+import UIKit
+
+var hello = "Hello, playground"
+
+enum Priority<String> {
+    case consume
+    case create
+}
+
+class AppleWatch {
+    var owned: Bool = false
+}
+
+class Person {
+    // blank slate -- but obviously built for something
+    var priority: Priority<String> = Priority.consume
+    var appleWatch: AppleWatch = AppleWatch()
+    var things_to_learn = [String]()
+    
+    // because your voice matters too
+    func take_control() {
+        if self.appleWatch.owned {
+            things_to_learn.append("Swift")
+            self.priority = Priority.create
+        }
+    }
+}
+
+let me = Person()
+me.appleWatch.owned = true
+me.take_control()
+
+me.things_to_learn
+me.priority
+
+var goodbye = "Goodbye, playground"
+
